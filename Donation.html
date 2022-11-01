@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bar.css">
+    <link rel="shortcut icon" href="https://d.top4top.io/p_24937967w1.png" type="image/x.icon">
+
+    <style>
+        body {
+            background-image: url("https://k.top4top.io/p_2495meh7t1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: fixed;
+            background-color: seagreen;
+            margin: auto;
+
+        }
+
+        .typeOfDonation {
+            font-size: 15px;
+            font-weight: bold;
+            display: inline-flex;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+            margin-top: 5px;
+        }
+
+        .typeOfDonation p {
+            font-size: 10px;
+            text-align: left;
+        }
+
+        .containt {
+            background-color: rgba(255, 235, 205, 0.5);
+            padding: 10px;
+            margin-top: 70px; margin-bottom: 70px;
+            border-radius: 25px;
+            width: 70%;
+
+        }
+        h1{
+            letter-spacing: 6px;  
+            font-size: 5rem;
+            font-weight: 700;            
+            color: rgb(21, 58, 35);
+        }
+        h2{
+            color: rgba(137, 100, 44, 0.795);
+        }
+
+        legend {
+            font-weight: bold;
+            border-width: 1px;
+            border-style: outset;
+            border-radius: 15px;
+            padding: 6px;
+            border-color: darkslategray;
+            background-color: rgba(240, 248, 255, 0.5);
+            text-align: center;
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .NumberOfTree {
+            margin: 5px;
+            margin-left: 0px;
+            display: flex;
+            justify-content: left;
+        }
+
+        button {
+            padding: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 5px;
+            background-color: rgba(240, 248, 255, 0.5);
+            border-radius: 15px;
+            border-width: 2px; border-color: rgba(73, 83, 92, 0.982);
+            font-weight: bold;
+
+        }
+
+        fieldset {
+            background-color: rgba(240, 248, 255, 0.5);
+            margin-top: 10px;
+            border-radius: 15px;
+        }
+
+        .info {
+            padding: 13px 0px;
+            margin-left: 0px;
+            font-weight: bold;
+
+        }
+
+        #one_time,
+        #recurring {
+            width: 15px;
+            height: 15px;
+        }
+
+        .radio__input {
+            display: none;
+
+        }
+
+        .radio__lable {
+            padding: 8px 14px;
+            font-size: 14px;
+            font-family: sans-serif;
+            color: black;
+            background: darkgrey;
+            cursor: pointer;
+            transition: all 0.1s;
+
+        }
+
+        .radio__lable:not(:last-of-type) {
+            border-right: 2px solid silver;
+        }
+
+        .radio__input:checked+.radio__lable {
+            background-color: silver;
+        }
+
+        .form {
+            max-width: 400px;            
+        }
+        label{
+            display: block;
+        }
+        .DI {
+            float: right;
+            border-width: 5px;
+            border-style: outset;
+            border-color: darkslategray;
+            position: relative;
+            top:10px;
+        }
+    </style>
+    <title>Donate a Tree</title>
+</head>
+
+<body>
+<!-- bar -->
+<div class="bar">
+    <div class="brand"><img src="https://d.top4top.io/p_24937967w1.png" alt="" height="100px" width="80px">
+    </div>
+   <a href="Home.html">Home</a>
+ </div>
+<!-- bar -->
+<center>
+    <div class="containt">
+        <header>
+        <h1>Donate for Plant!</h1>
+        <h2>PLANT TREES WHERE THEY'RE NEEDED MOST</h2>
+        </header>
+        <p>ONE Dollor. ONE Tree</p>
+     
+        <form action="SummaryOfOrder.html" method="Get" enctype="multipart/form-data" class="form">
+            <fieldset>
+                <legend>Number of Tree:</legend>
+                <div class="typeOfDonation">
+
+                    <label class="radio__lable" for="one_time">One_Time Donation</label>
+                    <input type="radio" class="radio__input" name="Type of Donation" id="one_time"
+                        value="For Now Just This Time" checked>
+
+
+
+                    <label class="radio__lable" for="recurring">Recurring Donation</label>
+                    <input type="radio" class="radio__input" name="Type of Donation" id="recurring"
+                        value="Donate Every 1 Month">
+
+
+
+                </div>
+                <p id="resultOfRadio"></p>
+                <script>
+                    let radioBtns = document.querySelectorAll("input[name='Type of Donation']");
+                    let resultOfRadio = document.getElementById("resultOfRadio");
+
+                    let findSelected = () => {
+                        let selected = document.querySelector("input[name='Type of Donation']:checked").value;
+                        resultOfRadio.textContent = `${selected}`;
+                    }
+
+                    radioBtns.forEach(radioBtn => {
+                        radioBtn.addEventListener("change", findSelected);
+                    });
+
+                    findSelected();
+                </script>
+
+
+                <div>
+                    <p style="font-size: medium;">Number Of Trees To Be Planted:</p>
+                    <input type="text" id="txt" name="Price" value="$20">
+
+
+                    </script>
+
+            </fieldset>
+            <fieldset>
+                <legend>Customer information</legend>
+                <div class="info">
+                    <div>
+                        <label for="email">Email: </label>
+                        <input type="email" name="Email" id="Email" placeholder="exaple@email.com" required>
+                    </div>
+                    <div>
+                        <label for="FirstName">First Name: </label>
+                        <input type="text" name="First Name" id="FirstName" required>
+                    </div>
+                    <div>
+                        <label for="LastName">Last Name: </label>
+                        <input type="text" name="Last Name" id="LastName" required>
+                    </div>
+                    <div>
+                        <label for="company">Company: </label>
+                        <input type="text" name="Company" id="company" placeholder="optinal">
+                    </div>
+                    <div>
+                        <div>
+                            <label for="Address">Address: </label>
+                            <input type="text" name="Address" id="Address" required>
+                        </div>
+                        <div>
+                            <label for="City">City: </label>
+                            <input type="text" name="City" id="City" required>
+                        </div>
+                        <div>
+                            <label for="Country">Country: </label>
+                            <select name="Country" id="Country">
+                                <option value="Afghanistan">Afghanistan</option>
+                                <option value="Aland Islands">Aland Islands</option>
+                                <option value="Albania">Albania</option>
+                                <option value="Algeria">Algeria</option>
+                                <option value="Andorra">Andorra</option>
+                                <option value="Angola">Angola</option>
+                                <option value="Anguilla">Anguilla</option>
+                                <option value="Antigua And Barbuda">Antigua And Barbuda</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Armenia">Armenia</option>
+                                <option value="Aruba">Aruba</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Austria">Austria</option>
+                                <option value="Azerbaijan">Azerbaijan</option>
+                                <option value="Bahamas">Bahamas</option>
+                                <option value="Bahrain">Bahrain</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Barbados">Barbados</option>
+                                <option value="Belarus">Belarus</option>
+                                <option value="Belarus">Belarus</option>
+                                <option value="Belgium">Belgium</option>
+                                <option value="Belize">Belize</option>
+                                <option value="Benin">Benin</option>
+                                <option value="Bermuda">Bermuda</option>
+                                <option value="Bhutan">Bhutan</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Bosnia And Herzegovina">Bosnia And Herzegovina</option>
+                                <option value="Botswana">Botswana</option>
+                                <option value="Bouvet Island">Bouvet Island</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                <option value="Brunei">Brunei</option>
+                                <option value="Bulgaria">Bulgaria</option>
+                                <option value="Burkina Faso">Burkina Faso</option>
+                                <option value="Burundi">Burundi</option>
+                                <option value="Cambodia">Cambodia</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Cape Verde">Cape Verde</option>
+                                <option value="Cayman Islands">Cayman Islands</option>
+                                <option value="Central African Republic">Central African Republic</option>
+                                <option value="China">China</option>
+                                <option value="Chile">Chile</option>
+                                <option value="Chad">Chad</option>
+                                <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Comoros">Comoros</option>
+                                <option value="Congo">Congo</option>
+                                <option value="Congo, The Democratic Republic Of The">Congo, The Democratic Republic Of
+                                    The</option>
+                                <option value="Cook Islands">Cook Islands</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                                <option value="Croatia">Croatia</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Curaçao">Curaçao</option>
+                                <option value="Cyprus">Cyprus</option>
+                                <option value="Czech Republic">Czech Republic</option>
+                                <option value="Czechia">Czechia</option>
+
+
+                            </select>
+                        </div>
+                        <div>
+                            <label for="Zip_Code">ZIP code: </label>
+                            <input type="Zip_Code" name="Zip Code" id="Zip_Code" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="Phone">Phone: </label>
+                        <input type="Phone" name="Phone" id="Phone" required>
+                    </div>
+                </div>
+
+            </fieldset>
+            <fieldset>
+                <legend>Billing and Payment</legend>
+                <div>
+                    <p>Credit card</p>
+                    <div>
+                        <label for="NameOnCard">Name on Card: </label>
+                        <input type="NameOnCard" name="Name On Card" id="NameOnCard" required>
+                    </div>
+                    <div>
+                        <label for="CardNumber">Card Number: </label>
+                        <input type="CardNumber" name="Card Number" id="CardNumber" required>
+                    </div>
+                    <div>
+                        <label for="Expiration">Expiration: </label>
+                        <input type="Expiration" name="Expiration" id="Expiration" required>
+                    </div>
+                    <div>
+                        <label for="CVV">CVV: </label>
+                        <input type="CVV" name="CVV" id="CVV" required>
+                    </div>
+                </div>
+
+
+
+            </fieldset>
+
+            <button type="submit" style="margin: 5px;">Place my order</button>
+
+        </form></center>
+        
+      
+    </div>
+
+
+</body>
+
+</html>
