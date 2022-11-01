@@ -1,0 +1,52 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap'); */
+
+* { 
+     margin: 0;
+      padding: 0; 
+      box-sizing: border-box;
+     }
+
+     html{
+        font-size: 10ox;
+     }
+
+     body{
+        background: url('https://f.top4top.io/p_2493j3ogj1.png') ;
+        background-position: 0 1000px;
+     }
+
+     .us {
+        max-width: 1100px; 
+        margin: 0 auto; 
+        padding: 0  3rem;
+        margin-top: 4rem;
+        text-align: center;
+       }
+
+       h1{
+        color: rgb(20, 82, 22);
+        font-size: 5rem;
+        font-weight: 700;
+        letter-spacing: 6px;  
+       }
+
+       h2{
+         color: rgb(185, 164, 111);
+         font-size:2rem;
+         font-weight: 400;
+         margin-bottom: 4rem;
+      }
+
+.iimg
+{
+margin-top: 10rem;
+margin-bottom: 1rem;
+
+}
+
+p { 
+font-size: 2rem; color:rgb(255, 255, 255) ; 
+line-height: 2rem; 
+margin-bottom: 2rem;
+margin-top: 3rem;
+}
